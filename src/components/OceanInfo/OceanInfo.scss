@@ -1,0 +1,42 @@
+.ocean-container {
+    height: 12rem;
+    width: 12rem;
+    margin: 1rem;
+    background-color: #586f7c;
+    // background-image: url('../../textures/ocean_info_texture.png');
+    border-radius: 12rem;
+    box-shadow: .2rem .2rem .5rem #000;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Boogaloo', cursive;
+    color: #000;
+
+    &.active {
+        border: 1rem solid #06d6a0;
+    }
+}
+
+.ocean-name {
+    font-size: 2rem;
+}
+
+.ocean-population {
+    font-size: 1.5rem;
+}
+
+.ocean-status {
+    margin: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+
+    &.active{
+        background-color: #06d6a0;
+    }
+    &.inactive {
+        background-color: #ef476f;
+    }
+}
