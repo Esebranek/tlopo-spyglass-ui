@@ -11,7 +11,7 @@ const OceanInfo: FunctionComponent<Ocean> = (props: Ocean) => {
             <div className="ocean-name">
                 {props.name}
             </div>
-            <div className="ocean-population">Population: {props.population}</div>
+            <div className="ocean-population">{props.population}</div>
         </div>
     )
 }

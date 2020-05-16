@@ -7,7 +7,7 @@ import './OceanOverview.scss'
 
 const OceanOverview: FunctionComponent = () => {
     const [oceans, setOceans] = useState<Ocean[] | undefined>()
-    
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await getOceans();
@@ -18,12 +18,15 @@ const OceanOverview: FunctionComponent = () => {
 
     console.log(oceans)
     return (
-        oceans ?
-            <div className="ocean-overview-container">
-                {oceans.map((ocean: Ocean) => (
-                    <OceanInfo {...ocean} />
-                ))}
-            </div> : null
+        <div className="container">
+            <div className="ocean-title">Oceans</div>
+            {oceans ?
+                <div className="ocean-overview-container">
+                    {oceans.map((ocean: Ocean) => (
+                        <OceanInfo {...ocean} />
+                    ))}
+                </div> : null}
+        </div>
     )
 }
 

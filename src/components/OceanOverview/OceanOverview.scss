@@ -1,3 +1,21 @@
+.container {
+    width: 85%;
+}
+
+.ocean-title {
+    width: 100%;
+    height: 6rem;
+    line-height: 6rem;
+    margin: 2rem 0;
+    border-radius: 6rem;
+    border: 1rem solid #8d99ae;
+    box-shadow: .2rem .2rem .5rem #000;
+    background-color: #edf2f4;
+    text-align: center;
+    font-size: 6rem;
+    font-family: 'Boogaloo', cursive;
+}
+
 .ocean-overview-container {
     width: 100%;
     display: flex;
