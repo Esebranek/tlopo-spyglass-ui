@@ -29,17 +29,17 @@ const OceanOverview: FunctionComponent = () => {
     const rankPopulations = (oceans: Ocean[]) => {
         oceans
             .sort((a, b) => b.population - a.population)
-            .forEach((ocean, index) => {ocean.rank = index + 1; return ocean})
+            .forEach((ocean, index) => { ocean.rank = index + 1; return ocean })
         oceans.sort((a, b) => a.name.localeCompare(b.name))
         return oceans
     }
 
-    
+
 
     return (
         <div className="overview-container">
             <div className="ocean-title">Oceans</div>
-            <div className="oceans-population">Pirates: {totalPopulation}</div>
+            {totalPopulation ? <div className="oceans-population">Pirates: {totalPopulation}</div> : null}
             {oceans ?
                 <div className="ocean-overview-container">
                     {oceans.map((ocean: Ocean) => (
