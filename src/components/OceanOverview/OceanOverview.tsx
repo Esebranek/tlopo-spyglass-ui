@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useEffect } from 'react'
 import { Ocean } from '../../model/ApiModels'
 import { getOceans } from '../../services/TlopoApiService'
 import { OceanInfo } from '../OceanInfo'
+import { LoadingRipple } from '../LoadingRipple'
 import './OceanOverview.scss'
 
 
@@ -25,7 +26,12 @@ const OceanOverview: FunctionComponent = () => {
                     {oceans.map((ocean: Ocean) => (
                         <OceanInfo {...ocean} />
                     ))}
-                </div> : null}
+                </div>
+                :
+                <div className="ocean-loading-container">
+                    <LoadingRipple />
+                </div>
+            }
         </div>
     )
 }

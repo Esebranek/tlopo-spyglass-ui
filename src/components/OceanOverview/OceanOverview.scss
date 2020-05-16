@@ -1,5 +1,8 @@
 .container {
     width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ocean-title {
@@ -22,4 +25,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.ocean-loading-container {
+    margin: 5rem 0;
 }
