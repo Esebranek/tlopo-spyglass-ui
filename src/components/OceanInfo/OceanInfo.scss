@@ -2,12 +2,12 @@
     height: 10rem;
     width: 10rem;
     border-radius: 10rem;
-    margin: 1rem;
+    margin: 1rem 1rem;
     background-color: #edf2f4;
-    // background-image: url('../../textures/ocean_info_texture.png');
     box-shadow: .2rem .2rem .5rem #000;
     display: flex;
     padding: 1rem;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -38,5 +38,31 @@
     }
     &.inactive {
         background-color: #ef476f;
+    }
+}
+
+.ocean-rank {
+    position: absolute;
+    z-index: 0;
+    top: -2.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    height: 2rem;
+    width: 2rem;
+    background-color: #edf2f4;
+    font-family: 'Boogaloo', cursive;
+    line-height: 2rem;
+    box-shadow: .1rem .1rem .5rem #000;
+
+    &.r1 {
+        border: 1rem solid #f25c54;
+    }
+
+    &.r2 {
+        border: 1rem solid #f4845f;
+    }
+
+    &.r3 {
+        border: 1rem solid #f7b267;
     }
 }

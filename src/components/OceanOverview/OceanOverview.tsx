@@ -8,23 +8,42 @@ import './OceanOverview.scss'
 
 const OceanOverview: FunctionComponent = () => {
     const [oceans, setOceans] = useState<Ocean[] | undefined>()
+    const [totalPopulation, setTotalPopulation] = useState<number | undefined>()
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getOceans();
+            let data = await getOceans();
+            data = rankPopulations(data)
             setOceans(data)
+            setTotalPopulation(sumPopulation(data))
         }
         fetchData();
     }, [])
 
-    console.log(oceans)
+    const sumPopulation = (oceans: Ocean[]) => {
+        let totalPopulation = 0;
+        oceans.forEach(ocean => totalPopulation += ocean.population)
+        return totalPopulation;
+    }
+
+    const rankPopulations = (oceans: Ocean[]) => {
+        oceans
+            .sort((a, b) => b.population - a.population)
+            .forEach((ocean, index) => {ocean.rank = index + 1; return ocean})
+        oceans.sort((a, b) => a.name.localeCompare(b.name))
+        return oceans
+    }
+
+    
+
     return (
-        <div className="container">
+        <div className="overview-container">
             <div className="ocean-title">Oceans</div>
+            <div className="oceans-population">Pirates: {totalPopulation}</div>
             {oceans ?
                 <div className="ocean-overview-container">
                     {oceans.map((ocean: Ocean) => (
-                        <OceanInfo {...ocean} />
+                        <OceanInfo key={ocean.name} {...ocean} />
                     ))}
                 </div>
                 :

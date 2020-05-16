@@ -6,13 +6,13 @@ import './OceanInfo.scss'
 const OceanInfo: FunctionComponent<Ocean> = (props: Ocean) => {
 
     return (
-        <div className={`ocean-container ${props.available ? 'active' : 'inactive'}`}>
-            {/* <div className={props.available ? "ocean-status active" : "ocean-status inactive"}></div> */}
-            <div className="ocean-name">
-                {props.name}
+            <div className={`ocean-container ${props.available ? 'active' : 'inactive'}`}>
+                { (props.rank || 4) < 4 ? <div className={`ocean-rank r${props.rank}`}>{props.rank}</div> : null}
+                <div className="ocean-name">
+                    {props.name}
+                </div>
+                <div className="ocean-population">{props.population}</div>
             </div>
-            <div className="ocean-population">{props.population}</div>
-        </div>
     )
 }
 

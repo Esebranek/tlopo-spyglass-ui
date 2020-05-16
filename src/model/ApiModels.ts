@@ -5,6 +5,7 @@ interface Ocean {
     population: number
     fleet: Fleet
     invasion: null
+    rank: number | undefined
 
 }
 
