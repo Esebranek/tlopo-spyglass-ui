@@ -35,8 +35,6 @@ const OceanOverview: FunctionComponent = () => {
         return oceans
     }
 
-
-    console.log(oceans)
     return (
         <div className="overview-container">
             <div className="ocean-title">Oceans</div>
