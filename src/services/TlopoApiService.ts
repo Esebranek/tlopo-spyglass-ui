@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const tlopoApiClient = axios.create({
     baseURL: 'https://tlopo-dashboard-api.herokuapp.com/'
+    // baseURL: 'http://localhost:5000/'  // Useful for testing new API features when you're running that locally
 })
 
 

@@ -13,9 +13,11 @@ const OceanOverview: FunctionComponent = () => {
     useEffect(() => {
         const fetchData = async () => {
             let data = await getOceans();
-            data = rankPopulations(data)
-            setOceans(data)
-            setTotalPopulation(sumPopulation(data))
+            if (data) {
+                data = rankPopulations(data)
+                setOceans(data)
+                setTotalPopulation(sumPopulation(data))
+            }
         }
         fetchData();
     }, [])

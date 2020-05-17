@@ -17,9 +17,14 @@
         border: 1rem solid #06d6a0;
     }
 
-    &.event {
+    &.event-1 {
         grid-row: span 2;
         height: 26rem;
+    }
+
+    &.event-2 {
+        grid-row: span 3;
+        height: 40rem;
     }
 }
 
@@ -45,12 +50,17 @@
 .ocean-event {
     position: absolute;
     z-index: 1;
-    height: 12rem;
+    height: 24rem;
     width: 10rem;
     border: 1rem solid #ef476f;
     border-radius: 10rem;
-    padding-top: 12rem;
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &.double {
+        height: 38rem;
+    }
 
     .event-container {
         padding: 0 1rem;
