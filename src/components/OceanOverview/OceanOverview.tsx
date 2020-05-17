@@ -30,12 +30,11 @@ const OceanOverview: FunctionComponent = () => {
         oceans
             .sort((a, b) => b.population - a.population)
             .forEach((ocean, index) => { ocean.rank = index + 1; return ocean })
-        // oceans.sort((a, b) => a.name.localeCompare(b.name))
         return oceans
     }
 
 
-
+    console.log(oceans)
     return (
         <div className="overview-container">
             <div className="ocean-title">Oceans</div>

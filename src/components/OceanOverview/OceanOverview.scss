@@ -21,10 +21,8 @@
 
 .ocean-overview-container {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 }
 
 .ocean-loading-container {
