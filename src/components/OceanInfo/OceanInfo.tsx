@@ -15,6 +15,7 @@ const OceanInfo: FunctionComponent<Ocean> = (props: Ocean) => {
     return (
         <div className={`ocean-container${getEventCount()}`}>
             <div className={`ocean-metadata${props.available ? ' active' : ' inactive'}`}>
+                {(props.rank || 4) < 4 ? <div className={`ocean-rank r${props.rank}`}>{props.rank}</div> : null}
                 <div className="ocean-name">
                     {props.name}
                 </div>
