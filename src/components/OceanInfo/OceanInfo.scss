@@ -5,12 +5,12 @@
     margin: 1rem;
     border-radius: 10rem;
     background-color: #edf2f4;
-    box-shadow: .2rem .2rem .5rem #000;
+    box-shadow: 0.2rem 0.2rem 0.5rem #000;
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
-    font-family: 'Boogaloo', cursive;
+    font-family: "Boogaloo", cursive;
     color: #000;
 
     &.active {
@@ -39,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Boogaloo', cursive;
+    font-family: "Boogaloo", cursive;
     color: #000;
 
     &.active {
@@ -65,7 +65,7 @@
     .event-container {
         padding: 0 1rem;
         justify-content: center;
-        font-family: 'Boogaloo', cursive;
+        font-family: "Boogaloo", cursive;
         color: #000;
         text-align: center;
 
@@ -74,7 +74,7 @@
         }
 
         .event-info {
-            margin: .4rem 0;
+            margin: 0.4rem 0;
             font-size: 1.2rem;
         }
     }
@@ -94,7 +94,7 @@
     width: 2rem;
     border-radius: 2rem;
 
-    &.active{
+    &.active {
         background-color: #06d6a0;
     }
     &.inactive {
@@ -111,9 +111,9 @@
     height: 2rem;
     width: 2rem;
     background-color: #edf2f4;
-    font-family: 'Boogaloo', cursive;
+    font-family: "Boogaloo", cursive;
     line-height: 2rem;
-    box-shadow: .1rem .1rem .5rem #000;
+    box-shadow: 0.1rem 0.1rem 0.5rem #000;
 
     &.r1 {
         border: 1rem solid #f25c54;

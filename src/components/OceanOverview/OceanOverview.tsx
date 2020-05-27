@@ -1,4 +1,5 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import React, { FunctionComponent, useState } from 'react'
+import useInterval from 'use-interval'
 import { Ocean } from '../../model/ApiModels'
 import { getOceans } from '../../services/TlopoApiService'
 import { OceanInfo } from '../OceanInfo'
@@ -10,22 +11,21 @@ const OceanOverview: FunctionComponent = () => {
     const [oceans, setOceans] = useState<Ocean[] | undefined>()
     const [totalPopulation, setTotalPopulation] = useState<number | undefined>()
 
-    useEffect(() => {
-        const fetchData = async () => {
-            let data = await getOceans();
-            if (data) {
-                data = rankPopulations(data)
-                setOceans(data)
-                setTotalPopulation(sumPopulation(data))
-            }
+    useInterval(async () => {
+        let data = await getOceans()
+        if (data && data.length) {
+            data = rankPopulations(data)
+            setOceans(data)
+            setTotalPopulation(sumPopulation(data))
         }
-        fetchData();
-    }, [])
+    }, 5 * 1000, true)
+
+
 
     const sumPopulation = (oceans: Ocean[]) => {
         let totalPopulation = 0;
         oceans.forEach(ocean => totalPopulation += ocean.population)
-        return totalPopulation;
+        return totalPopulation
     }
 
     const rankPopulations = (oceans: Ocean[]) => {

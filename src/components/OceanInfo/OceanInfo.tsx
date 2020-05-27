@@ -15,7 +15,6 @@ const OceanInfo: FunctionComponent<Ocean> = (props: Ocean) => {
     return (
         <div className={`ocean-container${getEventCount()}`}>
             <div className={`ocean-metadata${props.available ? ' active' : ' inactive'}`}>
-                {(props.rank || 4) < 4 ? <div className={`ocean-rank r${props.rank}`}>{props.rank}</div> : null}
                 <div className="ocean-name">
                     {props.name}
                 </div>
@@ -23,7 +22,7 @@ const OceanInfo: FunctionComponent<Ocean> = (props: Ocean) => {
             </div>
             {props.fleet || props.invasion ?
                 <div className={`ocean-event ${props.fleet && props.invasion ? ' double' : ''}`}>
-                    <div style={{height: "6rem"}}></div>
+                    <div style={{ height: "6rem" }}></div>
                     {props.invasion ?
                         <div className="event-container">
                             <div className="event-title">Invasion</div>

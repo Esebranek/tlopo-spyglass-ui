@@ -6,6 +6,7 @@ interface Ocean {
     fleet: Fleet | null
     invasion: Invasion | null
     rank: number | undefined
+    updated: boolean | undefined
 
 }
 
